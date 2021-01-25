@@ -30,7 +30,7 @@ st.markdown("***{}***".format(sub_result['Libellé_long'].iloc[0]))
 st.markdown('----')
 st.dataframe(sub_result)
 
-CAGR = np.round(((sub_result['Libellé_long'].loc['Année'==2019]/sub_result['Libellé_long'].loc['Année'==2015])^(1/4)-1)*100,2)
+CAGR = np.round(((sub_result['Année'==2019]["Quantité_d_actes"]/sub_result['Année'==2015]["Quantité_d_actes"])^(1/4)-1)*100,2)
 # Use directly Columns as argument. You can use tab completion for this!
 st.markdown("***CAGR 2015-2019: {}***".format(CAGR))
 fig = px.scatter(sub_result,x='Année', y="Quantité_d_actes")
