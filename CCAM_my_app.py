@@ -30,8 +30,6 @@ st.markdown("***{}***".format(sub_result['Libellé_long'].iloc[0]))
 st.markdown('----')
 st.dataframe(sub_result)
 
-CAGR = np.round(((sub_result["Quantité_d_actes"].iloc[-1]/sub_result["Quantité_d_actes"].iloc[0])^(1/4)-1)*100,2)
 # Use directly Columns as argument. You can use tab completion for this!
-st.markdown("***CAGR 2015-2019: {}***".format(CAGR))
 fig = px.scatter(sub_result,x='Année', y="Quantité_d_actes")
 st.plotly_chart(fig) 
